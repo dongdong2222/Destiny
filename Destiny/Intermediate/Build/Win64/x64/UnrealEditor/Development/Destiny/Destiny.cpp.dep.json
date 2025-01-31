@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ehdwn\\github\\destiny\\destiny\\source\\destiny\\destiny.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\ehdwn\\github\\destiny\\destiny\\intermediate\\build\\win64\\x64\\destinyeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\ehdwn\\github\\destiny\\destiny\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\destiny\\definitions.destiny.h",
+            "c:\\users\\ehdwn\\github\\destiny\\destiny\\source\\destiny\\destiny.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

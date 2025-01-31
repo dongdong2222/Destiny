@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-Destiny.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\ehdwn\GitHub\Destiny\Destiny\Intermediate\Build\Win64\x64\DestinyEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\ehdwn\GitHub\Destiny\Destiny\Intermediate\Build\Win64\x64\UnrealEditor\Development\Destiny\Destiny.cpp.obj"
+"C:\Users\ehdwn\GitHub\Destiny\Destiny\Intermediate\Build\Win64\x64\UnrealEditor\Development\Destiny\PerModuleInline.gen.cpp.obj"
+"C:\Users\ehdwn\GitHub\Destiny\Destiny\Intermediate\Build\Win64\x64\UnrealEditor\Development\Destiny\Default.rc2.res"
+/OUT:"C:\Users\ehdwn\GitHub\Destiny\Destiny\Intermediate\Build\Win64\x64\UnrealEditor\Development\Destiny\UnrealEditor-Destiny.lib"

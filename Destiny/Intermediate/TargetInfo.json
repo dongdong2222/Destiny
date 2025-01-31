@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Destiny",
+			"Path": "..\\Source\\Destiny.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "DestinyEditor",
+			"Path": "..\\Source\\DestinyEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
