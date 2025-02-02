@@ -74,8 +74,8 @@ Plugins/**/Intermediate/*
 DerivedDataCache/*
 
 # Content File
-Contents/*
+Content/*
 
 # except 0_Commit
-!Contents/0_Commit/
-!Contents/0_Commit/**
+!Content/0_Commit/
+!Content/0_Commit/**
