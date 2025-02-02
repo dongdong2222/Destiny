@@ -13,5 +13,10 @@ UCLASS()
 class DESTINY_API ADestinyGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+public:
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+
+protected:
+	void HandleMatchAssignmentIfNotExpectingOne();
+	void OnMatchAssignmentGiven(FPrimaryAssetId ExperienceId, const FString& ExperienceIdSource);
 };

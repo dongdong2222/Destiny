@@ -16,7 +16,7 @@ class DESTINY_API UDestinyAssetManager : public UAssetManager
 public:
 	UDestinyAssetManager();
 
-	UDestinyAssetManager& Get();
+	static UDestinyAssetManager& Get();
 
 	static bool ShouldLogAssetLoads();
 

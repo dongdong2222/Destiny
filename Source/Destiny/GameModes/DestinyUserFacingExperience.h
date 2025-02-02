@@ -6,6 +6,8 @@
 #include "Engine/DataAsset.h"
 #include "DestinyUserFacingExperience.generated.h"
 
+class UCommonSession_HostSessionRequest;
+
 /**
  * 모드의 기본단위
  */
@@ -21,5 +23,9 @@ public:
 	/** The gameplay experience to load */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Experience, meta = (AllowedTypes = "DestinyExperienceDefinition"))
 	FPrimaryAssetId ExperienceID;
+
+public:
+	UFUNCTION(BlueprintCallable, BlueprintPure=false, meta=(Worldcontext = "WorldContextObject"))
+	UCommonSession_HostSessionRequest* CreateHostingRequest(const UObject* WorldContextObject) const;
 	
 };

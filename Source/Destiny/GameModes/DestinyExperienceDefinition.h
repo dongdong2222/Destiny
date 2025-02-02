@@ -6,12 +6,12 @@
 #include "Engine/DataAsset.h"
 #include "DestinyExperienceDefinition.generated.h"
 
-class ULyraPawnData;
+class UDestinyPawnData;
 
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType, Const)
 class DESTINY_API UDestinyExperienceDefinition : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
@@ -21,7 +21,7 @@ public:
 	/** The default pawn class to spawn for players */
 	//@TODO: Make soft?
 	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
-	TObjectPtr<const ULyraPawnData> DefaultPawnData;
+	TObjectPtr<const UDestinyPawnData> DefaultPawnData;
 
 	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
 	TArray<FString> GameFeaturesToEnable;

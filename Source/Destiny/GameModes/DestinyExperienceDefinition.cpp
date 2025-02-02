@@ -3,3 +3,6 @@
 
 #include "DestinyExperienceDefinition.h"
 
+UDestinyExperienceDefinition::UDestinyExperienceDefinition()
+{
+}
