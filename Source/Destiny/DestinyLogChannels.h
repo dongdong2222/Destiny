@@ -7,3 +7,4 @@
 
 
 DECLARE_LOG_CATEGORY_EXTERN(D_Log, Log, All);
+DECLARE_LOG_CATEGORY_EXTERN(LogDestinyExperience, Log, All);

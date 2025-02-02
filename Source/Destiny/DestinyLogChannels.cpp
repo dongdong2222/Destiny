@@ -4,3 +4,4 @@
 #include "DestinyLogChannels.h"
 
 DEFINE_LOG_CATEGORY(D_Log);
+DEFINE_LOG_CATEGORY(LogDestinyExperience);
