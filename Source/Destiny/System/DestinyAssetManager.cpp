@@ -46,7 +46,7 @@ UObject* UDestinyAssetManager::SynchronousLoadAsset(const FSoftObjectPath& Asset
 		//2가지 분기
 		//1. assetManager가 있으면, AssetManager의 StreamableManager를 통해 정적 로딩
 		//2. 아니면, FSoftObjectPath를 통해 바로 정적 로딩
-		if (UAssetManager::IsValid())
+		if (UAssetManager::IsInitialized())
 		{
 			return UAssetManager::GetStreamableManager().LoadSynchronous(AssetPath);
 		}
