@@ -13,8 +13,11 @@ public class Destiny : ModuleRules
 			"CoreUObject", 
 			"Engine", 
 			"InputCore", 
-			"EnhancedInput" 
-		});
+			"EnhancedInput",
+            "ModularGameplay",
+            "GameFeatures",
+
+        });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
 			"CommonUser"
