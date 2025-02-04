@@ -8,8 +8,6 @@
 
 class UDestinyInventoryItemInstance;
 
-
-
 USTRUCT(BlueprintType)
 struct FDestinyInventoryEntry
 {
@@ -48,7 +46,7 @@ class DESTINY_API UDestinyInventoryManagerComponent : public UActorComponent
 
 public:	
 	// Sets default values for this component's properties
-	UDestinyInventoryManagerComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+	UDestinyInventoryManagerComponent();
 
 	UPROPERTY()
 	FDestinyInventoryList InventoryList;

@@ -4,9 +4,8 @@
 #include "DestinyInventoryManagerComponent.h"
 
 // Sets default values for this component's properties
-UDestinyInventoryManagerComponent::UDestinyInventoryManagerComponent(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
-	, InventoryList(this)
+UDestinyInventoryManagerComponent::UDestinyInventoryManagerComponent()
+	: InventoryList(this)
 {
 	// ...
 }

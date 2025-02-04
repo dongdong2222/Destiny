@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Components/GameStateComponent.h"
-//#include "LoadingProcess"
 #include "DestinyExperienceManagerComponent.generated.h"
 
 class UDestinyExperienceDefinition;
@@ -30,7 +29,7 @@ class DESTINY_API UDestinyExperienceManagerComponent : public UGameStateComponen
 {
 	GENERATED_BODY()
 public:
-	UDestinyExperienceManagerComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+	UDestinyExperienceManagerComponent(const FObjectInitializer& ObjectInitializer);
 
 	//UActorComponent interface
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;

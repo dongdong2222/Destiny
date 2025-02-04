@@ -16,6 +16,9 @@ public class Destiny : ModuleRules
 			"EnhancedInput",
             "ModularGameplay",
             "GameFeatures",
+            "GameplayAbilities",
+            "GameplayTags",
+			"GameplayTasks",
 
         });
 

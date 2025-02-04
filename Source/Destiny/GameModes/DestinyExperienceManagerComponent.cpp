@@ -6,7 +6,8 @@
 #include "Destiny/GameModes/DestinyExperienceDefinition.h"
 #include "Destiny/DestinyLogChannels.h"
 
-UDestinyExperienceManagerComponent::UDestinyExperienceManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+UDestinyExperienceManagerComponent::UDestinyExperienceManagerComponent(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
 
 }
