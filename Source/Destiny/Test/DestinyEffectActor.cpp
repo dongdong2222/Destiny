@@ -19,12 +19,13 @@ ADestinyEffectActor::ADestinyEffectActor()
 	Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere"));
 	Sphere->SetupAttachment(RootComponent);
 
-	//Sphere->OnComponentBeginOverlap.AddDynamic(this, &ADestinyEffectActor::OnOverlap);
+	Sphere->OnComponentBeginOverlap.AddDynamic(this, &ADestinyEffectActor::OnOverlap);
 	//Sphere->OnComponentEndOverlap.AddDynamic(this, &ADestinyEffectActor::OnEndOverlap);
 }
 
 void ADestinyEffectActor::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("OnOverlap"));
 	//TODO : Change this to apply a Gameplay Effect
 	if (IAbilitySystemInterface* ASCInterface = Cast<IAbilitySystemInterface>(OtherActor))
 	{

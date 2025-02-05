@@ -4,6 +4,8 @@
 #include "DestinyCharacter.h"
 #include "Destiny/AbilitySystem/DestinyAbilitySystemComponent.h"
 #include "Destiny/Player/DestinyPlayerState.h"
+#include "Destiny/Player/DestinyPlayerController.h"
+#include "Destiny/UI/DestinyHUD.h"
 
 // Sets default values
 ADestinyCharacter::ADestinyCharacter()
@@ -27,6 +29,19 @@ void ADestinyCharacter::InitAbilityActorInfo()
 	DestinyPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(DestinyPlayerState, this);
 	AbilitySystemComponent = DestinyPlayerState->GetAbilitySystemComponent();
 	AbilitySet = DestinyPlayerState->GetAbilitySet();
+
+	//멀티플레이 환경을 고려: 클라이언트의 경우 자신만의 PlayerController를 가지고 있기 때문에 다른 Player의 경우 null이 된다.
+	//따라서 if check로 현재 플레이어만 실행하고 싶은 로직을 작성한다.
+	//check()로 할 경우 멀티플레이 환경에서 동작하지 않는다. -> crash나니까
+	if (ADestinyPlayerController* DestinyPlayerController = Cast<ADestinyPlayerController>(GetController()))
+	{
+		//HUD도 local 플레이어에게만 유효
+		if (ADestinyHUD* DestinyHUD = Cast<ADestinyHUD>(DestinyPlayerController->GetHUD()))
+		{
+			DestinyHUD->InitOverlay(DestinyPlayerController, DestinyPlayerState, AbilitySystemComponent, AbilitySet);
+		}
+
+	}
 }
 
 void ADestinyCharacter::PossessedBy(AController* NewController)
@@ -41,6 +56,7 @@ void ADestinyCharacter::OnRep_PlayerState()
 	Super::OnRep_PlayerState();
 	//init ability actor info for the client
 	InitAbilityActorInfo();
+
 }
 
 
