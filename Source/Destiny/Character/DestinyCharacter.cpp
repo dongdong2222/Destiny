@@ -30,7 +30,7 @@ void ADestinyCharacter::InitAbilityActorInfo()
 	AbilitySystemComponent = DestinyPlayerState->GetAbilitySystemComponent();
 	AbilitySet = DestinyPlayerState->GetAbilitySet();
 
-	//멀티플레이 환경을 고려: 클라이언트의 경우 자신만의 PlayerController를 가지고 있기 때문에 다른 Player의 경우 null이 된다.
+	//멀티플레이 환경을 고려: 클라이언트의 경우 자신만이 PlayerController를 가지고 있기 때문에 다른 Player의 Character의 GetController는 null이 된다.
 	//따라서 if check로 현재 플레이어만 실행하고 싶은 로직을 작성한다.
 	//check()로 할 경우 멀티플레이 환경에서 동작하지 않는다. -> crash나니까
 	if (ADestinyPlayerController* DestinyPlayerController = Cast<ADestinyPlayerController>(GetController()))

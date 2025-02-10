@@ -10,3 +10,11 @@ void UDestinyWidgetController::SetWidgetControllerParams(const FWidgetController
 	AbilitySystemComponent = WCParms.AbilitySystemComponent;
 	AttributeSet = WCParms.AttributeSet;
 }
+
+void UDestinyWidgetController::BroadcastInitialValues()
+{
+}
+
+void UDestinyWidgetController::BindCallbackToDependencies()
+{
+}

@@ -11,6 +11,8 @@ UDestinyOverlayWidgetController* ADestinyHUD::GetOverlayWidgetController(const F
 	{
 		OverlayWidgetController = NewObject<UDestinyOverlayWidgetController>(this, OverlayWidgetControllerClass);
 		OverlayWidgetController->SetWidgetControllerParams(WCParams);
+		OverlayWidgetController->BindCallbackToDependencies();
+
 	}
 	return OverlayWidgetController;
 }
@@ -28,6 +30,7 @@ void ADestinyHUD::InitOverlay(APlayerController* PC, APlayerState* PS, UAbilityS
 	UDestinyOverlayWidgetController* WidgetController = GetOverlayWidgetController(WidgetControllerParams);
 	
 	OverlayWidget->SetWidgetController(WidgetController);
+	WidgetController->BroadcastInitialValues();
 
 	OverlayWidget->AddToViewport();
 }

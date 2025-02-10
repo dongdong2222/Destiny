@@ -43,6 +43,8 @@ class DESTINY_API UDestinyWidgetController : public UObject
 	GENERATED_BODY()
 public:
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParms);
+	virtual void BroadcastInitialValues();
+	virtual void BindCallbackToDependencies();
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "WidgetController")
 	TObjectPtr<APlayerController> PlayerController;
