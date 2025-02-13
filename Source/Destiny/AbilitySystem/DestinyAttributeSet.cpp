@@ -44,6 +44,11 @@ void UDestinyAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCal
 	Super::PostGameplayEffectExecute(Data);
 	FEffectProperties EffectProperties;
 	SetEffectProperties(Data, EffectProperties);
+
+	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 3.f)
+	}
 }
 
 void UDestinyAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const
