@@ -26,7 +26,7 @@ ADestinyEffectActor::ADestinyEffectActor()
 void ADestinyEffectActor::ApplyEffecttoTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> GameplayEffectClass)
 {
 	UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(TargetActor);
-	if (!TargetASC) return;
+	if (!IsValid(TargetASC)) return;
 
 	check(GameplayEffectClass);
 	FGameplayEffectContextHandle EffectContextHandle = TargetASC->MakeEffectContext();

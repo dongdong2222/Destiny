@@ -28,6 +28,7 @@ void ADestinyCharacter::InitAbilityActorInfo()
 	check(DestinyPlayerState);
 	DestinyPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(DestinyPlayerState, this);
 	AbilitySystemComponent = DestinyPlayerState->GetAbilitySystemComponent();
+	Cast<UDestinyAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
 	AbilitySet = DestinyPlayerState->GetAbilitySet();
 
 	//멀티플레이 환경을 고려: 클라이언트의 경우 자신만이 PlayerController를 가지고 있기 때문에 다른 Player의 Character의 GetController는 null이 된다.
@@ -59,11 +60,6 @@ void ADestinyCharacter::OnRep_PlayerState()
 
 }
 
-
-UAbilitySystemComponent* ADestinyCharacter::GetAbilitySystemComponent() const
-{
-	return AbilitySystemComponent;
-}
 
 // Called to bind functionality to input
 void ADestinyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

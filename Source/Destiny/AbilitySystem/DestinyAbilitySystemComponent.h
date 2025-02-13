@@ -6,6 +6,9 @@
 #include "AbilitySystemComponent.h"
 #include "DestinyAbilitySystemComponent.generated.h"
 
+
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FEffectAssetTags, const FGameplayTagContainer&);
 /**
  * 
  */
@@ -14,8 +17,14 @@ class DESTINY_API UDestinyAbilitySystemComponent : public UAbilitySystemComponen
 {
 	GENERATED_BODY()
 public:
+	FEffectAssetTags EffectAssetTags;
+
+	void  AbilityActorInfoSet();
+
 	virtual void OnGameplayTaskActivated(UGameplayTask& Task) override;
 	virtual void OnGameplayTaskDeactivated(UGameplayTask& Task) override;
 protected:
+	void EffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle);
+
 	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override;
 };

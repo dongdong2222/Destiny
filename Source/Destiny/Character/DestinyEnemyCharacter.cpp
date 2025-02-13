@@ -25,3 +25,8 @@ void ADestinyEnemyCharacter::BeginPlay()
 	//Set ownerActor and avatarActor
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 }
+
+void ADestinyEnemyCharacter::InitAbilityActorInfo()
+{
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+}

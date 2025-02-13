@@ -3,15 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "Destiny/Character/DestinyCharacterBase.h"
 #include "AbilitySystemInterface.h"
 #include "DestinyCharacter.generated.h"
 
-class UAbilitySystemComponent;
-class UAttributeSet;
+
 
 UCLASS()
-class DESTINY_API ADestinyCharacter : public ACharacter, public IAbilitySystemInterface
+class DESTINY_API ADestinyCharacter : public ADestinyCharacterBase
 {
 	GENERATED_BODY()
 
@@ -20,8 +19,7 @@ public:
 	ADestinyCharacter();
 
 public:	
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	UAttributeSet* GetAbilitySet() const { return AbilitySet; }
+
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void PossessedBy(AController* NewController) override;
@@ -30,11 +28,8 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY()
-	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
-	UPROPERTY()
-	TObjectPtr<UAttributeSet> AbilitySet;
+
 private:
-	void InitAbilityActorInfo();
+	virtual void InitAbilityActorInfo() override;
 
 };
